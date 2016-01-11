@@ -1,0 +1,47 @@
+#!/usr/bin/python
+
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
+import sys
+from mp3wav import application
+from mp3wav import converter
+from mp3wav.exceptions.fileexception import FileTypeException
+from mp3wav.exceptions.libraryexception import LibraryException
+from mp3wav.exceptions.filenotexistexception import FileNotExistException
+from mp3wav.exceptions.samefileexception import SameFileException
+from mp3wav.exceptions.overwriteexception import OverWriteException
+
+def appInvoker():
+	app = QApplication(sys.argv)
+	mp3wavapp = application.Mp3WavApp()
+	mp3wavapp.show()
+	app.exec_()
+
+def commandInvoker(infile, outfile, overwrite=None):
+	try:
+		convertcom = converter.Converter(infile, outfile, overwrite)
+		convertcom.convert()
+	except FileTypeException:
+		pass
+	except FileNotExistException:
+		pass
+	except OverWriteException:
+		pass
+	except LibraryException:
+		pass
+
+if __name__ == "__main__":
+	args = sys.argv
+	if "-a" in args or "--app" in args:
+		appInvoker()
+	else:
+		length = len(sys.argv)
+		if length > 3:
+			print("Invalid Arguments")
+		elif length == 3 and ("-o" in args or "--overwrite" in args):
+			commandInvoker(sys.argv[1], sys.argv[2], True)
+		else:
+			commandInvoker(sys.argv[0], sys.argv[1], False)
+
+
+
