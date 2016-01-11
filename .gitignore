@@ -1,0 +1,9 @@
+!*.py
+!README.md
+!MANIFEST.in
+*.pyc
+*.txt
+*.spec
+mp3wav.egg-info/
+build/
+dist/
