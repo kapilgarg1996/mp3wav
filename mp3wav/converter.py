@@ -51,9 +51,9 @@ class Converter(object):
 		if not os.path.exists(self.__inputFile) :
 			raise FileNotExistException()
 		if not self.__inputFile.endswith("mp3"):
-				raise FileTypeException(1)
+			raise FileTypeException(1)
 		if not self.__outputFile.endswith("wav"):
-				raise FileTypeException(2)
+			raise FileTypeException(2)
 		if os.path.exists(self.__outputFile):
 			if not self.__overwrite :
 				raise OverWriteException()

@@ -36,12 +36,12 @@ if __name__ == "__main__":
 		appInvoker()
 	else:
 		length = len(sys.argv)
-		if length > 3:
+		if length > 4:
 			print("Invalid Arguments")
-		elif length == 3 and ("-o" in args or "--overwrite" in args):
-			commandInvoker(sys.argv[1], sys.argv[2], True)
-		else:
-			commandInvoker(sys.argv[0], sys.argv[1], False)
+		elif length == 4 and (args[1]=="-o" or args[1]=="--overwrite"):
+			commandInvoker(sys.argv[2], sys.argv[3], True)
+		elif length==3:
+			commandInvoker(sys.argv[1], sys.argv[2], False)
 
 
 
