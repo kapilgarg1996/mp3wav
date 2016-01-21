@@ -21,8 +21,6 @@ before_install:
 - sudo mkdir -p /builds
 - sudo chmod a+rw /builds
 
-virtualenv:
-     system_site_packages: true
 
 install:
  - sudo apt-get install -y libqt4-dev
@@ -42,7 +40,9 @@ install:
  - popd
  - pip install pexpect
   
-script: py.test
+script: 
+  - cd ..
+  - py.test
 
 cache:
   directories:
