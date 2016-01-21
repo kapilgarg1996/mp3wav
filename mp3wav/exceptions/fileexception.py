@@ -1,6 +1,6 @@
 import os
 import sys
-from errordialog import ErrorDialog
+from mp3wav.exceptions.errordialog import ErrorDialog
 
 class FileTypeException(Exception):
 	def __init__(self, sid, parent=None):

@@ -1,4 +1,4 @@
-from errordialog import ErrorDialog
+from mp3wav.exceptions.errordialog import ErrorDialog
 
 class SameFileException(Exception):
 	def __init__(self, parent=None):
