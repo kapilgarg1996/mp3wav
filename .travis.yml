@@ -1,6 +1,5 @@
 language: python
 python:
-- "2.6"
 - "2.7"
 - "3.2"
 - "3.3"
@@ -22,6 +21,9 @@ before_install:
 - sudo mkdir -p /builds
 - sudo chmod a+rw /builds
 
+virtualenv:
+     system_site_packages: true
+
 install:
  - sudo apt-get install -y libqt4-dev
  - pushd /builds
@@ -39,10 +41,13 @@ install:
  - popd
  - popd
  - pip install pexpect
- - pip install -e git+https://github.com/kapilgarg1996/mp3wav.git#egg=mp3wav
   
 script: py.test
 
+cache:
+  directories:
+           - /downloads
+  apt: true
 #authors who receive email notifications about build status
 notifications:
         email:
