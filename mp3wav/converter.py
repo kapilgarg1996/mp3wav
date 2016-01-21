@@ -1,11 +1,11 @@
 import os
 import sys
 import pexpect
-from exceptions.fileexception import FileTypeException
-from exceptions.libraryexception import LibraryException
-from exceptions.filenotexistexception import FileNotExistException
-from exceptions.samefileexception import SameFileException
-from exceptions.overwriteexception import OverWriteException
+from mp3wav.exceptions.fileexception import FileTypeException
+from mp3wav.exceptions.libraryexception import LibraryException
+from mp3wav.exceptions.filenotexistexception import FileNotExistException
+from mp3wav.exceptions.samefileexception import SameFileException
+from mp3wav.exceptions.overwriteexception import OverWriteException
 
 class Converter(object):
 	def __init__(self, infile, outfile, overwrite=False, caller=None):
