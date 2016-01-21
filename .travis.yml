@@ -6,8 +6,12 @@ python:
 - "3.3"
 - "3.4"
 
+install:
+ - pip install -e git+https://github.com/kapilgarg1996/mp3wav.git#egg=mp3wav
+  
 script: py.test
 
+#authors who receive email notifications about build status
 notifications:
         email:
         - kapilgarg1996@gmail.com

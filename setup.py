@@ -21,5 +21,9 @@ setup(name='mp3wav',
 	keywords='mp3 wav converter',
 	packages=['mp3wav', 'mp3wav/exceptions'],
         test_suite='py.test',
+<<<<<<< HEAD
         tests_require=['pytest'],
+=======
+        tests_require=['pytest']
+>>>>>>> 47bd9cfdbfdc255e559b6f09fba1de4283998d3e
 	zip_safe=False)
