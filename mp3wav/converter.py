@@ -25,7 +25,6 @@ class Converter(object):
 	def __setInputFile(self, fileName):
 		if not os.path.isabs(fileName):
 			self.__inputFile = self.__getInputFile(fileName)
-		self.__filesize = os.path.getsize(self.__inputFile)
 
 	def __setOutputFile(self, fileName):
 		if not os.path.isabs(fileName):
