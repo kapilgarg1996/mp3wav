@@ -41,7 +41,6 @@ install:
  - pip install pexpect
   
 script: 
-  - cd ..
   - py.test
 
 cache:
