@@ -1,7 +1,6 @@
 language: python
 python:
 - "2.7"
-- "3.2"
 - "3.3"
 - "3.4"
 
@@ -42,6 +41,7 @@ install:
  - pip install -e git+https://github.com/kapilgarg1996/mp3wav.git#egg=mp3wav
   
 script: 
+  - python setup.py develop
   - py.test
 
 cache:
