@@ -20,4 +20,6 @@ setup(name='mp3wav',
 	scripts = ['mp3wav/bin/mp3wav'],
 	keywords='mp3 wav converter',
 	packages=['mp3wav', 'mp3wav/exceptions'],
+        test_suite='py.test',
+        tests_require=['pytest']
 	zip_safe=False)
