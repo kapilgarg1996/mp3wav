@@ -76,18 +76,7 @@ class Mp3WavApp(QDialog):
 	def startConversion(self):
 		self.__infile = str(self.inputFileLine.text())
 		self.__outdir = str(self.outputFileLine.text())
-		try:
-			self.__convert()
-		except FileNotExistException:
-			pass
-		except SameFileException:
-			pass
-		except OverWriteException:
-			pass
-		except FileTypeException:
-			pass
-		except LibraryException:
-			pass
+		self.__convert()
 
 	def __convert(self):
 		self.__outfilename = os.path.join(self.__outdir, str(self.outputFileLineName.text()))

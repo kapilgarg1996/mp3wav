@@ -13,9 +13,20 @@ from mp3wav.exceptions.overwriteexception import OverWriteException
 
 def appInvoker():
 	app = QApplication(sys.argv)
-	mp3wavapp = application.Mp3WavApp()
-	mp3wavapp.show()
-	app.exec_()
+        try:
+	    mp3wavapp = application.Mp3WavApp()
+	    mp3wavapp.show()
+	    app.exec_()
+	except FileTypeException:
+	    pass
+	except FileNotExistException:
+	    pass
+	except OverWriteException:
+	    pass
+	except LibraryException:
+	    pass
+        except SameFileException:
+            pass
 
 def commandInvoker(infile, outfile, overwrite=None):
 	try:
