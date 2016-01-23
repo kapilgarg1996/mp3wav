@@ -8,3 +8,4 @@ mp3wav.egg-info/
 build/
 dist/
 .cache/
+.coverage
