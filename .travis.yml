@@ -38,7 +38,6 @@ install:
  - popd
  - popd
  - pip install pexpect
- - pip install -e git+https://github.com/kapilgarg1996/mp3wav.git#egg=mp3wav
   
 script: 
   - python setup.py develop
