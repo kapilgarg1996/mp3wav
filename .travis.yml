@@ -38,6 +38,7 @@ install:
  - popd
  - popd
  - pip install pexpect
+ - pip install tox
  - pip install pytest-cov
  - pip install python-coveralls
   
