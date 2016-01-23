@@ -38,10 +38,14 @@ install:
  - popd
  - popd
  - pip install pexpect
+ - pip install pytest-cov
+ - pip install python-coveralls
   
 script: 
-  - python setup.py develop
-  - py.test
+  - py.test --cov=mp3wav tests/
+
+after_success:  
+ - coveralls
 
 cache:
   directories:
