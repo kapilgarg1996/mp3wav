@@ -38,11 +38,11 @@ install:
  - popd
  - popd
  - pip install pexpect
- - pip install tox
  - pip install pytest-cov
  - pip install python-coveralls
   
 script: 
+  - python setup.py build
   - py.test --cov=mp3wav tests/
 
 after_success:  
