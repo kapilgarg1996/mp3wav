@@ -18,13 +18,13 @@ def windowTest(qtbot):
     assert testapp.isVisible()
     assert testapp.close()
 
-def correctConvertTest(qtbot, tmpdir):
+def fileTypeTest(qtbot, tmpdir):
     testapp = Mp3WavApp()
     qtbot.addWidget(testapp)
     infile = tmpdir.mkdir("files").join("demo.mp3")
     infile.write("something")
     testapp.inputFileLine.setText(str(tmpdir.join("files", "demo.mp3")))
     testapp.outputFileLine.setText(str(tmpdir.join('files')))
-    testapp.outputFileLineName.setText(str(tmpdir.join('files', 'demo.wav')))
-    qtbot.mouseClick(testapp.conversionButton, Qt.LeftButton)
-    assert os.path.exists(str(tmpdir.join('files', 'demo.wav')))
+    testapp.outputFileLineName.setText('demo.wave')
+    with pytest.raises(FileTypeException):
+        qtbot.mouseClick(testapp.conversionButton, Qt.LeftButton)
