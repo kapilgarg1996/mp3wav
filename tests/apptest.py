@@ -2,7 +2,6 @@
 import pytest
 import os
 from PyQt4.QtGui import *
-from PyQt4.QtTest import QTest
 from PyQt4.QtCore import *
 from mp3wav.application import Mp3WavApp
 from mp3wav.exceptions.fileexception import FileTypeException
