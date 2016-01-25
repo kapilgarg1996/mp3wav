@@ -39,6 +39,7 @@ install:
  - popd
  - pip install pexpect
  - pip install pytest-cov
+ - pip install pytest-qt
  - pip install python-coveralls
   
 script: 
